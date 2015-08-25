@@ -1,0 +1,29 @@
+<%= form_for(@payout) do |f| %>
+  <% if @payout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payout.errors.count, "error") %> prohibited this payout from being saved:</h2>
+
+      <ul>
+      <% @payout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher_id %><br>
+    <%= f.number_field :publisher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :amount_paid %><br>
+    <%= f.number_field :amount_paid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
