@@ -1,29 +1,28 @@
-<%= form_for(@payout) do |f| %>
-  <% if @payout.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@payout.errors.count, "error") %> prohibited this payout from being saved:</h2>
-
-      <ul>
-      <% @payout.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @payout, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :id, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :publisher_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :publisher_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount_paid, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :amount_paid, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :id %><br>
-    <%= f.number_field :id %>
-  </div>
-  <div class="field">
-    <%= f.label :publisher_id %><br>
-    <%= f.number_field :publisher_id %>
-  </div>
-  <div class="field">
-    <%= f.label :amount_paid %><br>
-    <%= f.number_field :amount_paid %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  payouts_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
