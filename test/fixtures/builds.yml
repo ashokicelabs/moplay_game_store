@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  game_id: 1
+  version: MyString
+  whats_new: MyString
+  file_name: MyString
+  file_size: 1
+  status: MyString
+
+two:
+  id: 1
+  game_id: 1
+  version: MyString
+  whats_new: MyString
+  file_name: MyString
+  file_size: 1
+  status: MyString
